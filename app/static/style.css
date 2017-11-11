@@ -1,0 +1,53 @@
+.wrap {
+    margin: 0 auto;
+    width: 56.25em;
+}
+
+.topnav         { width: 80%; height: 200px; margin:0 auto;  }
+.topnav ul      {
+    position: fixed;
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #c0e1ff; }
+.topnav li          {  float: left; }
+.topnav li a        {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 30px 50px;
+    text-decoration: none; }
+.topnav li a:hover:not(.active) {
+    background-color: #ddd; }
+.topnav li a.active {
+    color: white;
+    background-color: #4CAF50; }
+
+.log-box            {text-align: left}
+.log-box fieldset   { margin: 0 auto; width: 21em; padding: 1em }
+.input              { text-align: center; margin: 0 auto}
+
+.add-box            { text-align: left}
+.add-box fieldset   { margin: 0 auto; width: 25em; padding: 1em}
+.add-box ul         { text-align: center}
+
+.mes-box            {
+    text-align: center;
+    width: 100%;
+    margin: 1.5em auto;
+    border: 1px solid #aaa;
+    padding: 0.7em;
+    background-color: #fee9ff;  }
+.mes-box li         { padding: 0.7em 0; text-align: left;}
+.mes-box li + li    { border-top: 1px dashed #fff; }
+.mes-box h3         { color: inherit;}
+.mes-box h4         {
+    display: inline;
+    margin-right: 2px;
+    font-weight: 400;
+    color: #66f; }
+.mes-box small      { color: #999; }
+.mes-box p          { padding: 1em 0; }

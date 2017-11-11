@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %} Log on {% endblock %}
+
+{% block page %}
+    <div class=log-box>
+        <form action="{{ url_for('logon') }}" method="POST">
+            <fieldset>
+                <legend>Log on</legend>
+                <div class=input>
+                    Name<input name="username" type="text"><br>
+                    Email<input name="email" type="text"><br>
+                    password<input name="password" type="password"><br>
+                    <input type="submit" name="Submit">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+{% endblock %}

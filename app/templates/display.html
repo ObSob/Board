@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} display {% endblock %}
+
+{% block page %}
+    <div class=mes-box>
+    <h2>留言板</h2>
+        <ul style="list-style-type: none; ">
+            {% for message in messages %}
+            <li><h4>{{ message.title }} <small>created at {{ message.pub_date }}</small></h4>
+                <p>{{ message.text|safe }}</p>
+                <hr align=left style=" border: 1px dotted #987cb9; width: 30%;" />
+                <small><li>评论：</li></small>
+                {% for comment in message.comments %}
+                    <li>{{ comment.text }}</li>
+                {% endfor %}
+                {% if session.known %}
+                <form action="{{ url_for('add_comment') }}" method="post" style="text-align: left">
+                    <dd>
+                        <textarea name="comment" type="text" rows="2" cols="60"></textarea>
+                        <input type="hidden" value="{{ message.id }}" name="mes_id">
+                        <input type="submit" value="提交评论" style="text-align: right">
+                    </dd>
+                </form>
+                {% endif %}
+                <HR align=left width=80% color=#987cb9 SIZE=1>
+            {% endfor %}
+        </ul>
+        {% if not tip %}
+            <h4>Tip</h4>
+        <dd>{{ tip }}</dd>
+        {% endif %}
+    </div>
+
+{% endblock %}

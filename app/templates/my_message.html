@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block page %}
+    <div class=mes-box>
+    <h3>留言板</h3>
+        <ul style="list-style-type: none; ">
+            {% for message in messages %}
+                <li><h4>{{ message.title }} <small>created at {{ message.pub_date }}</small></h4>
+                <p>{{ message.text|safe }}</p>
+                <form action="{{ url_for('my_message') }}" method="post">
+                <input name="id" type="hidden" value="{{ message.id }}">
+                <input type="submit" value="删除">
+                </form>
+            {% endfor %}
+        </ul>
+        {% if not tip %}
+            <h4>Tip</h4>
+            <dd>{{ tip }}</dd>
+        {% endif %}
+    </div>
+{% endblock %}

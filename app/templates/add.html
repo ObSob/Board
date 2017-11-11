@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block page %}
+    {% if not tip %}
+    <h3>{{ tip }}</h3>
+    {% endif %}
+    {% if not session.known %}
+    <h4>Please <a href="{{ url_for('login') }}">log in</a> first </h4>
+    {% else %}
+    <div class=add-box>
+        <form action="{{ url_for('add') }}" method="post">
+            <fieldset>
+                <dl>
+                    <dt>Title:</dt>
+                    <dd><input name="title" type="text"></dd>
+                    <dt>Text:</dt>
+                    <dd><textarea name="text" rows="5" cols="40"></textarea> </dd>
+                    <dd><input name="submit" type="submit"></dd>
+                </dl>
+            </fieldset>
+        </form>
+    </div>
+
+    {% endif %}
+{% endblock %}
