@@ -22,6 +22,9 @@
             {% if session.known %}
             <li><a href="{{ url_for('my_message') }}">我的留言</a> </li>
             {% endif %}
+            {% if session.known %}
+            <li><a href="{{ url_for('modify_password') }}">修改密码</a> </li>
+            {% endif %}
         </ul>
     </div>
 </div>

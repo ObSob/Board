@@ -100,6 +100,21 @@ def my_message():
         return redirect(url_for('my_message'))
 
 
+@app.route('/modify_password', methods=['POST', 'GET'])
+def modify_password():
+    if request.method == 'POST':
+        user_id = session['user_id']
+        user = User.query.filter_by(id=user_id).first()
+        password = request.form['password']
+        if user.verify_password(password=password):
+            new_password = request.form['new_password']
+            user.password(new_password)
+            db.session.add(user)
+            db.session.commit()
+        return redirect(url_for('display'))
+    return render_template('modify_password.html')
+
+
 @app.route('/my_info', methods=['GET', 'POST'])
 def my_info():
     pass

@@ -3,7 +3,11 @@
     width: 56.25em;
 }
 
-.topnav         { width: 80%; height: 200px; margin:0 auto;  }
+.topnav         {
+    width: 80%;
+    height: 200px;
+    margin:0 auto;
+    align-items: center;}
 .topnav ul      {
     position: fixed;
     text-align: center;
